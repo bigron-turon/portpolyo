@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rohn Monrhey Bañares | IT Student Portfolio</title>
+<meta name="description" content="Portfolio of Rohn Monrhey Bañares, an IT student who likes making games and is learning hardware and networking.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#101d3b; --ink-soft:#4a5673; --paper:#eef2f9; --card:#ffffff;
+  --blue:#2b55f5; --gold:#ffc933; --line:#d5dcec;
+  --head:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Figtree","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--ink:#eef2f9; --ink-soft:#a9b4d0; --paper:#0d1730; --card:#15213f; --line:#263456; --blue:#7f9bff;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.05rem/1.65 var(--body)}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+header{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+.logo{font:800 1.15rem var(--head);color:var(--ink);text-decoration:none}
+nav{display:flex;gap:4px;flex-wrap:wrap}
+nav a{color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:8px;font-weight:500;font-size:.95rem}
+nav a:hover{background:var(--card)}
+
+.hero{padding:72px 0 80px}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center}
+h1{font:800 clamp(2.4rem,6vw,4.2rem)/1.02 var(--head);margin:0 0 16px;letter-spacing:-.02em}
+.role{font:700 1.3rem var(--head);margin:0 0 12px}
+.lead{color:var(--ink-soft);max-width:34em;margin:0 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:600;text-decoration:none;border:2px solid var(--ink)}
+.btn.main{background:var(--ink);color:var(--paper)}
+.btn.alt{color:var(--ink)}
+.btn:hover{background:var(--gold);color:#101d3b;border-color:var(--gold)}
+.photo{position:relative;justify-self:center;width:min(100%,320px)}
+.photo::before{content:"";position:absolute;inset:18px -18px -18px 18px;background:var(--gold);border-radius:18px}
+.photo img{position:relative;display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top;border-radius:18px;border:3px solid var(--ink)}
+
+section{padding:72px 0;border-top:1px solid var(--line)}
+h2{font:800 clamp(1.8rem,4vw,2.5rem)/1.1 var(--head);margin:0 0 28px;letter-spacing:-.01em}
+#about p{max-width:40em;font-size:1.2rem;margin:0}
+
+.skills{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.skills li{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--blue);border-radius:12px;padding:18px 20px}
+.skills strong{display:block;font:700 1.1rem var(--head);margin-bottom:4px}
+.skills span{color:var(--ink-soft)}
+
+.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.cert{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.cert button{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in}
+.cert img{display:block;width:100%;height:auto}
+.cert div{padding:18px 20px 20px}
+.cert h3{font:700 1.2rem var(--head);margin:0 0 6px}
+.cert p{margin:0 0 6px;color:var(--ink-soft);font-size:.97rem}
+dialog{border:0;padding:0;background:none;max-width:min(94vw,1100px)}
+dialog::backdrop{background:rgba(8,14,30,.8)}
+dialog img{width:100%;height:auto;border-radius:10px;display:block}
+
+.empty{background:var(--card);border:2px dashed var(--line);border-radius:14px;padding:28px}
+.empty h3{font:700 1.2rem var(--head);margin:0 0 6px}
+.empty p{margin:0 0 14px;color:var(--ink-soft)}
+
+.contact{list-style:none;margin:0;padding:0;display:grid;gap:12px;max-width:560px}
+.contact li{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;display:flex;flex-wrap:wrap;gap:4px 14px}
+.contact b{min-width:84px}
+.contact a{overflow-wrap:anywhere}
+
+footer{padding:28px 0;border-top:1px solid var(--line);color:var(--ink-soft);font-size:.92rem}
+
+@media (max-width:760px){
+  .hero{padding:40px 0 56px}
+  .hero .wrap{grid-template-columns:1fr;gap:40px}
+  .photo{width:min(78%,280px)}
+  header .wrap{height:auto;padding-top:10px;padding-bottom:10px;flex-wrap:wrap}
+  section{padding:52px 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">Rohn Bañares</a>
+    <nav aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#certificates">Certificates</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Rohn Monrhey Bañares</h1>
+        <p class="role">IT student and aspiring game maker</p>
+        <p class="lead">I like making games and I'm currently gaining knowledge about hardware and networking.</p>
+        <div class="btns">
+          <a class="btn main" href="#certificates">See my certificates</a>
+          <a class="btn alt" href="#contact">Contact me</a>
+        </div>
+      </div>
+      <div class="photo">
+        <img src="images/profile.jpg" alt="Portrait of Rohn Monrhey Bañares in a navy suit" width="843" height="1264">
+      </div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <h2>About me</h2>
+      <p>I'm an IT student who likes to play games and is trying my best to learn how game development works so I can start my own game.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <ul class="skills">
+        <li><strong>Hands-on learner</strong><span>I learn best by trying things myself, then dig deeper once I know what they are.</span></li>
+        <li><strong>Persistence</strong><span>I finish what I start and give it my best effort.</span></li>
+        <li><strong>Microsoft Access</strong><span>Certified Microsoft Office Specialist: Access 2019 Expert.</span></li>
+        <li><strong>Microsoft Excel</strong><span>Certified Microsoft Office Specialist: Excel 2019 Associate.</span></li>
+        <li><strong>Enterprise security</strong><span>Completed Microsoft's Fundamentals of Enterprise Security course.</span></li>
+        <li><strong>Hardware and networking</strong><span>Currently learning how computer hardware and networks work.</span></li>
+        <li><strong>Game development</strong><span>Learning to make my own games by building them.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="certificates">
+    <div class="wrap">
+      <h2>Certificates</h2>
+      <div class="certs">
+        <article class="cert">
+          <button type="button" data-full="images/certificates/access-2019-expert.jpg" aria-label="Enlarge Access 2019 Expert certificate">
+            <img src="images/certificates/access-2019-expert.jpg" alt="Microsoft Office Specialist: Access 2019 Expert certificate" loading="lazy">
+          </button>
+          <div>
+            <h3>Access 2019 Expert</h3>
+            <p>Microsoft Office Specialist, issued December 17, 2025</p>
+            <p>Credential ID: wn7kq-48XR</p>
+            <a href="https://verify.certiport.com" target="_blank" rel="noopener">Verify on Certiport</a>
+          </div>
+        </article>
+        <article class="cert">
+          <button type="button" data-full="images/certificates/excel-2019-associate.jpg" aria-label="Enlarge Excel 2019 Associate certificate">
+            <img src="images/certificates/excel-2019-associate.jpg" alt="Microsoft Office Specialist: Excel 2019 Associate certificate" loading="lazy">
+          </button>
+          <div>
+            <h3>Excel 2019 Associate</h3>
+            <p>Microsoft Office Specialist, issued May 21, 2024</p>
+            <p>Credential ID: v732-Dwoe</p>
+            <a href="https://verify.certiport.com" target="_blank" rel="noopener">Verify on Certiport</a>
+          </div>
+        </article>
+        <article class="cert">
+          <button type="button" data-full="images/certificates/enterprise-security.jpg" aria-label="Enlarge Fundamentals of Enterprise Security certificate">
+            <img src="images/certificates/enterprise-security.jpg" alt="Certificate of course completion: Fundamentals of Enterprise Security" loading="lazy">
+          </button>
+          <div>
+            <h3>Fundamentals of Enterprise Security</h3>
+            <p>Microsoft content, delivered with La Consolacion University Philippines and CloudSwyft, issued April 22, 2026</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <div class="empty">
+        <h3>Game projects</h3>
+        <p>My game projects will be posted on my GitHub as I build them.</p>
+        <a class="btn main" href="https://github.com/bigron-turon" target="_blank" rel="noopener">Browse my GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <ul class="contact">
+        <li><b>Email</b> <a href="mailto:rohnmonrhey.banares@email.lcup.edu.ph">rohnmonrhey.banares@email.lcup.edu.ph</a></li>
+        <li><b>GitHub</b> <a href="https://github.com/bigron-turon" target="_blank" rel="noopener">bigron-turon (ronron)</a></li>
+        <li><b>LinkedIn</b> <a href="https://www.linkedin.com/in/rohn-monrhey-ba%C3%B1ares-69855a44a/" target="_blank" rel="noopener">Rohn Monrhey Bañares</a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Rohn Monrhey Bañares</div>
+</footer>
+
+<dialog id="viewer" aria-label="Certificate preview">
+  <img id="viewer-img" alt="">
+</dialog>
+
+<script>
+(function(){
+  var dlg=document.getElementById('viewer'), img=document.getElementById('viewer-img');
+  if(!dlg||!dlg.showModal) return;
+  document.querySelectorAll('.cert button').forEach(function(b){
+    b.addEventListener('click',function(){
+      img.src=b.dataset.full; img.alt=b.querySelector('img').alt; dlg.showModal();
+    });
+  });
+  dlg.addEventListener('click',function(){dlg.close();});
+  dlg.addEventListener('keydown',function(e){if(e.key==='Escape')dlg.close();});
+})();
+</script>
+</body>
+</html>
